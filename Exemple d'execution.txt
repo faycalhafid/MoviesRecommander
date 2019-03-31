@@ -1,0 +1,113 @@
+------ Partie 0 ------
+
+Les données contiennent 610 utilisateurs uniques et 9724 films uniques.
+Aperçu des données après fusion : 
+  movieId             title  ...   userId rating
+1       1  Toy Story (1995)  ...        1    4.0
+2       1  Toy Story (1995)  ...        5    4.0
+3       1  Toy Story (1995)  ...        7    4.5
+4       1  Toy Story (1995)  ...       15    2.5
+5       1  Toy Story (1995)  ...       17    4.5
+
+[5 rows x 5 columns]
+
+------ Partie 1 ------
+
+Aperçu des notes des utilisateurs (nombre de notes + moyenne des notes)
+        count      mean
+userId                 
+1         232  4.366379
+10        140  3.278571
+100       148  3.945946
+101        61  3.557377
+102        56  3.357143
+Moyenne du nombre de notes par utilisateur : 165.30491803278687
+Nombre minimum de notes attribuées par un même utilistauer : 20
+Nombre maximum de notes attribuées par un même utilisateur : 2698
+
+Répartition des utilisateurs en groupes...
+Méthode 1 (voir la doc) :
+	Groupe 1 : 583 utilisateurs.
+	Groupe 2 : 23 utilisateurs.
+	Groupe 3 : 1 utilisateurs.
+	Groupe 4 : 3 utilisateurs.
+
+Méthode 2 (voir la doc) :
+	Groupe 1 : 329 utilisateurs.
+	Groupe 2 : 124 utilisateurs.
+	Groupe 3 : 78 utilisateurs.
+	Groupe 4 : 79 utilisateurs.
+
+------ Partie 2 ------
+
+Aperçu des statistiques d'un film : nombre de notes et moyenne des notes par film ->
+                                        rating     
+                                          size mean
+title                                              
+'71 (2014)                                 1.0  4.0
+'Hellboy': The Seeds of Creation (2004)    1.0  4.0
+'Round Midnight (1986)                     2.0  3.5
+'Salem's Lot (2004)                        1.0  5.0
+'Til There Was You (1997)                  2.0  4.0
+Un film a en moyenne 10.375141475460438 notes
+Note moyenne d'un film = 3.501556983616962
+On se retrouve avec 1952 films populaires
+
+	Test : Recommander 5 films à un nouvel utilisateur.
+Résultat :
+['Shawshank Redemption, The (1994)', 'Godfather, The (1972)', 'Fight Club (1999)', 'Star Wars: Episode IV - A New Hope (1977)', 'Usual Suspects, The (1995)']
+
+------ Partie 3 ------
+
+Aperçu de la table de pivot (NaN <=> l'utilisateur n'a pas noté ce film) : 
+title   '71 (2014)                    ...                      À nous la liberté (Freedom for Us) (1931)
+userId                                ...                                                               
+1              NaN                    ...                                                            NaN
+10             NaN                    ...                                                            NaN
+100            NaN                    ...                                                            NaN
+101            NaN                    ...                                                            NaN
+102            NaN                    ...                                                            NaN
+103            NaN                    ...                                                            NaN
+104            NaN                    ...                                                            NaN
+105            NaN                    ...                                                            NaN
+106            NaN                    ...                                                            NaN
+107            NaN                    ...                                                            NaN
+
+[10 rows x 9719 columns]
+Aperçu de la matrice de corrélation : 
+title                                    '71 (2014)                    ...                      À nous la liberté (Freedom for Us) (1931)
+title                                                                  ...                                                               
+'71 (2014)                                      NaN                    ...                                                            NaN
+'Hellboy': The Seeds of Creation (2004)         NaN                    ...                                                            NaN
+'Round Midnight (1986)                          NaN                    ...                                                            NaN
+'Salem's Lot (2004)                             NaN                    ...                                                            NaN
+'Til There Was You (1997)                       NaN                    ...                                                            NaN
+
+[5 rows x 9719 columns]
+
+	Test : recommandation de 5 films à l'utilisateur dont l'idUser=220
+['Exorcism of Emily Rose, The (2005)', 'Looking for Richard (1996)', 'Zathura (2005)', 'Land Before Time III: The Time of the Great Giving (1995)', 'Endless Summer, The (1966)']
+
+Sachant que les films qu'il a regardé et la note qu'il leur a attribuée sont les suivants : 
+title
+300 (2007)                                                            4.5
+Ace Ventura: Pet Detective (1994)                                     2.0
+Airplane! (1980)                                                      4.5
+Aladdin (1992)                                                        5.0
+Aliens (1986)                                                         5.0
+American History X (1998)                                             5.0
+Animal House (1978)                                                   4.5
+Antz (1998)                                                           2.5
+Apollo 13 (1995)                                                      5.0
+Armageddon (1998)                                                     4.0
+Assassination of Jesse James by the Coward Robert Ford, The (2007)    5.0
+Austin Powers: International Man of Mystery (1997)                    3.5
+Austin Powers: The Spy Who Shagged Me (1999)                          3.5
+Babe (1995)                                                           4.5
+Baby Mama (2008)                                                      4.5
+Back to the Future (1985)                                             5.0
+Back to the Future Part II (1989)                                     4.5
+Back to the Future Part III (1990)                                    4.5
+Batman Begins (2005)                                                  4.5
+Beetlejuice (1988)                                                    3.5
+Name: 220, dtype: float64
