@@ -1,8 +1,5 @@
 import pandas as pd
 import numpy as np
-import sys
-original=sys.stdout
-sys.stdout=open("./output.txt","w")
 """
 ----------------------------------------------------------------------------
 Partie 0 : -> Importer les données 
@@ -174,4 +171,3 @@ print(str(recommand_to_user("220",pivotTab,corrMatrix,5)))
 print("\nSachant que les films qu'il a regardé et la note qu'il leur a attribuée sont les suivants : ")
 userRatings=pivotTab.loc["220"].dropna()
 print(str(userRatings.head(20)))
-sys.stdout=original
