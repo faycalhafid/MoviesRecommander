@@ -56,6 +56,7 @@ On se retrouve avec 1952 films populaires
 	Test : Recommander 5 films à un nouvel utilisateur.
 Résultat :
 ['Shawshank Redemption, The (1994)', 'Godfather, The (1972)', 'Fight Club (1999)', 'Star Wars: Episode IV - A New Hope (1977)', 'Usual Suspects, The (1995)']
+===> On voit que ce sont tous des films connus et populaires
 
 ------ Partie 3 ------
 
@@ -85,29 +86,32 @@ title                                                                  ...
 
 [5 rows x 9719 columns]
 
-	Test : recommandation de 5 films à l'utilisateur dont l'idUser=220
-['Exorcism of Emily Rose, The (2005)', 'Looking for Richard (1996)', 'Zathura (2005)', 'Land Before Time III: The Time of the Great Giving (1995)', 'Endless Summer, The (1966)']
+	Test : recommandation de 5 films à l'utilisateur dont l'idUser=8
+
+['Catwoman (2004)', 'Neighbors 2: Sorority Rising (2016)', "Cheech & Chong's The Corsican Brothers (1984)", 'Jonestown: The Life and Death of Peoples Temple (2006)', 'Wolf Creek (2005)']
 
 Sachant que les films qu'il a regardé et la note qu'il leur a attribuée sont les suivants : 
 title
-300 (2007)                                                            4.5
-Ace Ventura: Pet Detective (1994)                                     2.0
-Airplane! (1980)                                                      4.5
-Aladdin (1992)                                                        5.0
-Aliens (1986)                                                         5.0
-American History X (1998)                                             5.0
-Animal House (1978)                                                   4.5
-Antz (1998)                                                           2.5
-Apollo 13 (1995)                                                      5.0
-Armageddon (1998)                                                     4.0
-Assassination of Jesse James by the Coward Robert Ford, The (2007)    5.0
-Austin Powers: International Man of Mystery (1997)                    3.5
-Austin Powers: The Spy Who Shagged Me (1999)                          3.5
-Babe (1995)                                                           4.5
-Baby Mama (2008)                                                      4.5
-Back to the Future (1985)                                             5.0
-Back to the Future Part II (1989)                                     4.5
-Back to the Future Part III (1990)                                    4.5
-Batman Begins (2005)                                                  4.5
-Beetlejuice (1988)                                                    3.5
-Name: 220, dtype: float64
+Interview with the Vampire: The Vampire Chronicles (1994)    5.0
+Net, The (1995)                                              5.0
+Usual Suspects, The (1995)                                   5.0
+True Lies (1994)                                             5.0
+Babe (1995)                                                  5.0
+Dances with Wolves (1990)                                    5.0
+Shawshank Redemption, The (1994)                             5.0
+Schindler's List (1993)                                      5.0
+Four Weddings and a Funeral (1994)                           5.0
+Lion King, The (1994)                                        5.0
+Apollo 13 (1995)                                             4.0
+Dumb & Dumber (Dumb and Dumber) (1994)                       4.0
+Firm, The (1993)                                             4.0
+Get Shorty (1995)                                            4.0
+Jumanji (1995)                                               4.0
+Jurassic Park (1993)                                         4.0
+American President, The (1995)                               4.0
+Seven (a.k.a. Se7en) (1995)                                  4.0
+Nine Months (1995)                                           4.0
+Speed (1994)                                                 4.0
+Name: 8, dtype: float64
+
+===> L'utilisateur semble aimer les films d'aventure/action/fantaisie, ce qui est en cohérence avec nos recommandations

@@ -167,7 +167,8 @@ def recommand_to_user(userId,pivotTab,corrMatrix,N):
     return list(Similars.head(N).axes[0])
 
 print("\n\tTest : recommandation de 5 films à l'utilisateur dont l'idUser=220")
-print(str(recommand_to_user("220",pivotTab,corrMatrix,5)))
+print(str(recommand_to_user("8",pivotTab,corrMatrix,5)))
 print("\nSachant que les films qu'il a regardé et la note qu'il leur a attribuée sont les suivants : ")
-userRatings=pivotTab.loc["220"].dropna()
+userRatings=pivotTab.loc["8"].dropna()
+userRatings.sort_values(inplace=True,ascending=False)
 print(str(userRatings.head(20)))
